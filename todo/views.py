@@ -2,7 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 
-from todo.forms import TaskForm
+from todo.forms import TaskForm, TagForm
 from todo.models import Task, Tag
 
 
