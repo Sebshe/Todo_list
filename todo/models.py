@@ -8,7 +8,7 @@ class Tag(models.Model):
         ordering = ["name"]
 
     def __str__(self):
-        return f"{self.name}"
+        return self.name
 
 
 class Task(models.Model):
@@ -19,7 +19,7 @@ class Task(models.Model):
     tags = models.ManyToManyField(to=Tag, related_name="tasks")
 
     class Meta:
-        ordering = ["created_at", "is_done"]
+        ordering = ["-created_at", "is_done"]
 
     def __str__(self):
         return f"Content: {self.content}"
