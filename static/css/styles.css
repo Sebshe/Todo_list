@@ -1,0 +1,17 @@
+:root{
+    --main: #138496;
+    --dark: #094049
+}
+
+body {
+    margin-top: 20px;
+}
+.update-link {
+    color: var(--main);
+}
+.delete-link {
+    color: var(--dark)
+}
+.done {
+    color: var(--main);
+}
