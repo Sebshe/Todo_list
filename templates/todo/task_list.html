@@ -8,16 +8,16 @@
       Create
     </a>
   </h1>
-  {% if tasks_list %}
+  {% if task_list %}
     <ul class="list-group">
-      {% for task in tasks_list %}
+      {% for task in task_list %}
         <li class="list-group-item">
           <h4>
             {{ task.content }}
           </h4>
           <h6>
             Status:
-            {% if task.completed %}
+            {% if task.is_done %}
               <span class="done">Done</span>
             {% else %}
               Not Done
@@ -46,7 +46,7 @@
               Delete
             </a>
             {% if task.completed %}
-              <a href="{% url 'todo:complete-undo' pk=task.id %}" class="btn btn-light">
+              <a href="{% url 'todo:task_change_status' pk=task.id %}" class="btn btn-light">
                 Undo
               </a>
             {% else %}

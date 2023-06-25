@@ -8,14 +8,14 @@
   </a>
   </h3>
 
-  {% if tags_list %}
+  {% if tag_list %}
     <table class="table">
       <tr class="thead-dark">
         <th>Name</th>
         <th>Update</th>
         <th>Delete</th>
       </tr>
-      {% for tag in tags_list %}
+      {% for tag in tag_list %}
       <tr>
         <td>
           {{ tag.name }}

@@ -9,7 +9,7 @@ from .views import (
     TagCreateView,
     TagUpdateView,
     TagDeleteView,
-    TaskChangeStatusView,
+    complete_undo_task,
 
 )
 
@@ -24,7 +24,7 @@ urlpatterns = [
     path("tags/<int:pk>/update", TagUpdateView.as_view(), name="tag-update"),
     path("tags/<int:pk>/delete", TagDeleteView.as_view(), name="tag-delete"),
 
-    path('chng_st/<int:pk>', TaskChangeStatusView.as_view(), name='task_change_status'),
+    path('chng_st/<int:pk>', complete_undo_task, name='task_change_status'),
 
 ]
 
