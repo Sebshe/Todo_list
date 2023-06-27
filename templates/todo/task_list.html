@@ -45,16 +45,15 @@
             <a href="{% url 'todo:task-delete' pk=task.id %}" class="delete-link">
               Delete
             </a>
-            {% if task.completed %}
-              <a href="{% url 'todo:task_change_status' pk=task.id %}" class="btn btn-light">
-                Undo
-              </a>
-            {% else %}
-              <a href="{% url 'todo:task_change_status' pk=task.id %}" class="btn btn-info">
-                Complete
-              </a>
-            {% endif %}
-
+            <form action="{% url 'todo:task-list' %}" method="post" class="ml-auto">
+              {% csrf_token %}
+              <input type="hidden" name="task_id" value="{{ task.id }}">
+              {% if task.is_done %}
+                <input class="btn btn-info" type="submit" value="Undo">
+              {% else %}
+                <input class="btn btn-success" type="submit" value="Complete">
+              {% endif %}
+            </form>
           </p>
         </li>
       {% endfor %}
